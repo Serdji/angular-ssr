@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MaterialModule } from '../material.module';
+import {HomeService} from './home.service';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { MaterialModule } from '../material.module';
     TranslateModule,
     MaterialModule
   ],
+  providers: [HomeService],
   declarations: [HomeComponent]
 })
 export class HomeModule { }

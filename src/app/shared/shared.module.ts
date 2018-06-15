@@ -4,6 +4,7 @@ import { TransferHttpModule } from '@gorniv/ngx-transfer-http';
 
 import { LayoutsModule } from './layouts/layouts.module';
 import { SharedMetaModule } from './shared-meta';
+import {WrapperService} from '@shared/layouts/wrapper/wrapper.service';
 
 @NgModule({
   exports: [
@@ -11,7 +12,9 @@ import { SharedMetaModule } from './shared-meta';
     SharedMetaModule,
     TransferHttpModule
   ],
-  providers: []
+  providers: [
+    WrapperService
+  ]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

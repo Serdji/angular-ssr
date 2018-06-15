@@ -1,25 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-
-import { TranslatesService, ILang } from '@shared/translates';
+import { WrapperService } from '../wrapper/wrapper.service';
 
 @Component({
   selector: 'app-toolbar',
-  templateUrl: './toolbar.component.html'
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.styl']
 })
 export class ToolbarComponent implements OnInit {
-  public langList$: Observable<ILang[]>;
-  public currentLang: string;
 
-  constructor(private _translatesService: TranslatesService) {
+  constructor(private wrapperService: WrapperService ) { }
+
+  ngOnInit(): void {}
+
+  goOut(): void {
   }
 
-  ngOnInit(): void {
-    this.langList$ = this._translatesService.getLangList();
-    this.currentLang = this._translatesService.getCurrentLang();
+  sidenavToggle(): void {
+    this.wrapperService.toggle();
   }
 
-  public changeLang(code: string): void {
-    this._translatesService.changeLang(code);
-  }
 }

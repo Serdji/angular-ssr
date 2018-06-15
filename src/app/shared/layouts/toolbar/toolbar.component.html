@@ -1,15 +1,17 @@
-<span class="toolbar__logo">Angular RU Universal Starter</span>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button class="toolbar__button-nav" type="button" mat-button (click)="sidenavToggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>LEONARDO CRM</span>
 
-<select class="toolbar__lang" (change)="changeLang($event.target.value)">
-    <option *ngFor="let lang of langList$ | async"
-            [value]="lang.code"
-            [selected]="lang.code === currentLang">
-        {{ lang.name }}
-    </option>
-</select>
-<a href="https://github.com/Angular-RU/angular-universal-starter"
-   class="toolbar__github">
-    <img alt="angular" class="docs-angular-logo"
-         src="/assets/img/github-circle-white-transparent.svg">
-    GitHub
-</a>
+    <button class="toolbar__button-menu" mat-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>face</mat-icon>
+      <span>sadmin</span>
+    </button>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item (click)="goOut()">Выйти</button>
+    </mat-menu>
+
+  </mat-toolbar-row>
+</mat-toolbar>
