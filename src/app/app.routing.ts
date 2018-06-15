@@ -6,8 +6,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: '', component: WrapperComponent, canActivateChild: [MetaGuard], children: [
-      {path: 'home', loadChildren: './home/home.module#HomeModule'},
-      {path: 'about', loadChildren: './about/about.module#AboutModule'}
+      {path: 'home', loadChildren: './page/home/home.module#HomeModule'},
+      {path: 'about', loadChildren: './page/about/about.module#AboutModule'}
     ]
   },
   // 404
