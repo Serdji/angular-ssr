@@ -25,6 +25,16 @@ exports.send = (req, res) => {
   });
   City.find({}, (err, city) => {
     if (err) return res.status(500).send('Произошла ошибка: ошибка базы данных.' + err);
-    res.send('OK');
+    res.send('SEND CITIES');
+  });
+};
+
+exports.delete = (req, res) => {
+  City.remove({}, function(err, row) {
+    if (err) {
+      console.log('Произошла ошибка: ошибка базы данных.' + err);
+      return;
+    }
+    res.send('DELETE CITIES');
   });
 };
