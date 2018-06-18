@@ -11,4 +11,8 @@ export class HomeService {
     return this.http.get(`${environment.urlApi}/user`);
   }
 
+  getCities() {
+    return this.http.get(`${environment.urlApi}/city`);
+  }
+
 }

@@ -14,8 +14,20 @@ export class HomeComponent implements OnInit {
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
+    this.initUsers();
+    this.initCities();
+  }
+
+  private initUsers() {
     this.homeService.getUsers().subscribe(value => {
       this.users = value;
     });
   }
+
+  private initCities() {
+    this.homeService.getCities().subscribe(value => {
+      console.log(value);
+    });
+  }
+
 }
