@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-dash',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent {
+
+  @Input() public title: string;
+
   cards = [
     { title: 'Card 1', cols: 2, rows: 1 },
     { title: 'Card 2', cols: 1, rows: 1 },

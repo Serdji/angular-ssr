@@ -3,7 +3,7 @@ const City = require('./city');
 
 exports.list = (req, res) => {
   City.find({}, (err, city) => {
-    if (err) return res.status(500).send('Произошла ошибка: ошибка базы данных.');
+    if (err) return res.status(500).send('Произошла ошибка: ошибка базы данных.' + err);
     res.json(city.map((c) => {
       return {
         value: c.value,
@@ -14,7 +14,17 @@ exports.list = (req, res) => {
 };
 
 exports.send = (req, res) => {
-  for (const city of cities) {
-    City.create(city);
-  }
+  City.remove({}, function(err, row) {
+    if (err) {
+      console.log('Произошла ошибка: ошибка базы данных.' + err);
+      return;
+    }
+    for (const city of cities) {
+      City.create(city);
+    }
+  });
+  City.find({}, (err, city) => {
+    if (err) return res.status(500).send('Произошла ошибка: ошибка базы данных.' + err);
+    res.send('OK');
+  });
 };
