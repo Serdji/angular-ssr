@@ -2,11 +2,12 @@ const cities = require('./cities');
 const City = require('./city');
 
 exports.list = (req, res) => {
-  City.find({}, (err, user) => {
+  City.find({}, (err, city) => {
     if (err) return res.status(500).send('Произошла ошибка: ошибка базы данных.');
-    res.json(user.map((c) => {
+    res.json(city.map((c) => {
       return {
-        name: c,
+        value: c.value,
+        id: c.id
       }
     }));
   });

@@ -10,7 +10,7 @@ import { WrapperService } from '@shared/layouts/wrapper/wrapper.service';
   exports: [
     LayoutsModule,
     SharedMetaModule,
-    TransferHttpModule,
+    TransferHttpModule
   ],
   providers: [
     WrapperService

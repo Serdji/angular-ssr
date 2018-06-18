@@ -1,5 +1,19 @@
 <mat-card>
-  <mat-card-title>home works!</mat-card-title>
+  <mat-card-title>Имена</mat-card-title>
   <mat-card-subtitle *ngFor="let user of users">{{user.name}}</mat-card-subtitle>
 </mat-card>
 
+<mat-card class="table" *ngIf="isTableCard">
+  <mat-progress-bar *ngIf="isLoader; else loaserDisabled" mode="buffer"></mat-progress-bar>
+  <ng-template #loaserDisabled>
+    <mat-card-title>{{cities.length !==0 ? 'Результаты поиска' : 'По этому запросу ничего не найдено'}}</mat-card-title>
+    <app-table-example
+      [tableHeader]="[
+        ['value', 'Город'],
+        ['id', 'ID']
+      ]"
+      [tableDataSource]="cities"
+    >
+    </app-table-example>
+  </ng-template>
+</mat-card>
