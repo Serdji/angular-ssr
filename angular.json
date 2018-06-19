@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "universal-demo": {
+    "angular-ssr": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -63,21 +63,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "universal-demo:build"
+            "browserTarget": "angular-ssr:build"
           },
           "configurations": {
             "dev": {
-              "browserTarget": "universal-demo:build:dev"
+              "browserTarget": "angular-ssr:build:dev"
             },
             "production": {
-              "browserTarget": "universal-demo:build:production"
+              "browserTarget": "angular-ssr:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "universal-demo:build"
+            "browserTarget": "angular-ssr:build"
           }
         },
         "test": {
@@ -155,7 +155,7 @@
         }
       }
     },
-    "universal-demo-e2e": {
+    "angular-ssr-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -164,7 +164,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "universal-demo:serve"
+            "devServerTarget": "angular-ssr:serve"
           }
         },
         "lint": {
@@ -181,7 +181,7 @@
       }
     }
   },
-  "defaultProject": "universal-demo",
+  "defaultProject": "angular-ssr",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

@@ -1,6 +1,6 @@
 {
-  "name": "universal-demo",
-  "short_name": "universal-demo",
+  "name": "angular-ssr",
+  "short_name": "angular-ssr",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

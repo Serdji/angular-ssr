@@ -32,4 +32,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **pwa:** ng add [@angular](https://github.com/angular)/pwa --project universal-demo ([188920f](https://github.com/Angular-RU/angular-ssr/commit/188920f))
+* **pwa:** ng add [@angular](https://github.com/angular)/pwa --project angular-ssr ([188920f](https://github.com/Angular-RU/angular-ssr/commit/188920f))

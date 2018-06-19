@@ -1,6 +1,6 @@
 import { UniversalDemoPage } from './app.po';
 
-describe('universal-demo App', () => {
+describe('angular-ssr App', () => {
   let page: UniversalDemoPage;
 
   beforeEach(() => {
