@@ -15,7 +15,7 @@
     "build:server": "ng run angular-ssr:server:production",
     "build:prod": "ng build --prod",
     "build:universal": "ng build --prod && ng run angular-ssr:server:production && webpack --progress --colors",
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
