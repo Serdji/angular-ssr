@@ -1,1 +1,1 @@
-web: npm run ssr:sw
+web: node server.js
