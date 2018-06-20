@@ -20,8 +20,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prerender": "npm run build:universal && npm run generate:prerender",
-    "generate:prerender": "node prerender.js",
-    "preinstall": "npm run build:universal && npm run generate:prerender && set ENV=prod"
+    "generate:prerender": "node prerender.js"
   },
   "private": true,
   "dependencies": {
