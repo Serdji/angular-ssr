@@ -96,7 +96,7 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', 'src');
 
-// require('./api/router')(app);
+require('./api/router')(app);
 
 app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
 app.get(ROUTES, express.static(path.join(__dirname, '.', 'static')));
