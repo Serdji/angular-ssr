@@ -2,6 +2,7 @@
 import {Component, OnInit, Inject, OnDestroy} from '@angular/core';
 import {HomeService} from './home.service';
 import { takeWhile } from 'rxjs/operators';
+import {timer} from 'rxjs/internal/observable/timer';
 
 @Component({
   selector: 'app-home',
@@ -34,12 +35,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   private initCities() {
     this.isTableCard = true;
     this.isLoader = true;
-    this.homeService.getCities()
-      .pipe(takeWhile( _ => this.isActive ))
-      .subscribe(value => {
-        this.cities = value;
-        this.isLoader = false;
-    });
+    timer(1000).subscribe( _ => {
+      this.homeService.getCities()
+        .pipe(takeWhile( _ => this.isActive ))
+        .subscribe(value => {
+          this.cities = value;
+          this.isLoader = false;
+        });
+    } );
   }
 
   ngOnDestroy() {
