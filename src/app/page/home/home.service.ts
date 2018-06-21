@@ -12,7 +12,7 @@ export class HomeService {
   }
 
   getCities() {
-    return this.http.get(`${environment.urlApi}/city`);
+    return this.http.get(`${environment.urlApi}/city/500`);
   }
 
 }
