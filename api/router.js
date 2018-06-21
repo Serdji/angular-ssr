@@ -8,8 +8,8 @@ module.exports = (app) => {
 
   app.get('/api/city', city.list);
   app.get('/api/city/:limit', city.list);
-  app.get('/api/city/send', city.send);
-  app.get('/api/city/delete', city.delete);
+  app.put('/api/city', city.send);
+  app.delete('/api/city', city.delete);
 
 
 };
